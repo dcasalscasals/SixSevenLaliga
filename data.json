@@ -1,49 +1,53 @@
 {
-  "torneo": "Liga de Pádel - División Masculina Azul",
+  "torneo": "LA LIGA FPIB 26/27 (MENORCA) - DIVISIÓN AZUL MASCULINA",
   "mi_equipo": "SIX SEVEN",
   "actualizado": "14/10/2026",
+  "clasificacion": [
+    {"pos": 1, "equipo": "PADEL RANGERS", "jj": 2, "pt": 2, "jg": 2, "jp": 0, "pg": 6, "pp": 0, "sg": 12, "sp": 0},
+    {"pos": 2, "equipo": "PADEL RANGERS LEGACY", "jj": 2, "pt": 2, "jg": 2, "jp": 0, "pg": 5, "pp": 1, "sg": 11, "sp": 3},
+    {"pos": 3, "equipo": "BÁSICOs", "jj": 2, "pt": 2, "jg": 2, "jp": 0, "pg": 5, "pp": 1, "sg": 10, "sp": 2},
+    {"pos": 4, "equipo": "Recreativo de Juerga", "jj": 2, "pt": 2, "jg": 2, "jp": 0, "pg": 4, "pp": 2, "sg": 10, "sp": 5},
+    {"pos": 5, "equipo": "GALP", "jj": 2, "pt": 1, "jg": 1, "jp": 1, "pg": 4, "pp": 2, "sg": 10, "sp": 2},
+    {"pos": 6, "equipo": "SIX SEVEN", "jj": 2, "pt": 1, "jg": 1, "jp": 1, "pg": 3, "pp": 3, "sg": 7, "sp": 6, "efectividad": "50%"},
+    {"pos": 7, "equipo": "C.E. GIMNÀS CA NOSTRA \"B\"", "jj": 2, "pt": 1, "jg": 1, "jp": 1, "pg": 3, "pp": 3, "sg": 7, "sp": 6},
+    {"pos": 8, "equipo": "Taxi driver & cia", "jj": 2, "pt": 1, "jg": 1, "jp": 1, "pg": 3, "pp": 3, "sg": 7, "sp": 7},
+    {"pos": 9, "equipo": "Sa Nitja Padel", "jj": 2, "pt": 1, "jg": 1, "jp": 1, "pg": 3, "pp": 3, "sg": 6, "sp": 8},
+    {"pos": 10, "equipo": "PREGONDA A", "jj": 2, "pt": 1, "jg": 1, "jp": 1, "pg": 2, "pp": 4, "sg": 4, "sp": 9},
+    {"pos": 11, "equipo": "Biosport", "jj": 2, "pt": 1, "jg": 1, "jp": 1, "pg": 2, "pp": 4, "sg": 2, "sp": 10},
+    {"pos": 12, "equipo": "CAMPEONEX", "jj": 2, "pt": 0, "jg": 0, "jp": 2, "pg": 2, "pp": 4, "sg": 4, "sp": 10},
+    {"pos": 13, "equipo": "Barri Team", "jj": 2, "pt": 0, "jg": 0, "jp": 2, "pg": 1, "pp": 5, "sg": 4, "sp": 11},
+    {"pos": 14, "equipo": "MARIANOS", "jj": 2, "pt": 0, "jg": 0, "jp": 2, "pg": 1, "pp": 5, "sg": 3, "sp": 10},
+    {"pos": 15, "equipo": "Constr. Torrus & pipastore Team", "jj": 2, "pt": 0, "jg": 0, "jp": 2, "pg": 1, "pp": 5, "sg": 2, "sp": 10}
+  ],
   "jornadas": [
     {
       "jornada": "Jornada 1",
-      "fecha": "Fase de Grupos",
-      "equipo_local": "SIX SEVEN",
-      "equipo_visitante": "Rival de Grupo",
-      "resultado_global": "2 - 1",
-      "partidos": [
+      "enfrentamientos": [
         {
-          "orden": "Pareja 1",
-          "pareja_local": ["Jugador A1 (SIX SEVEN)", "Jugador A2 (SIX SEVEN)"],
-          "pareja_visitante": ["Rival 1", "Rival 2"],
-          "resultado_sets": "6-3 / 6-2",
-          "ganador": "SIX SEVEN"
+          "local": "PADEL RANGERS LEGACY",
+          "visitante": "Barri Team",
+          "resultado_global": "3 - 0",
+          "fecha": "27/09/2026 - 10:15",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["DAVID FLORIT", "JORDI CONEJO"], "visitante_jugadores": ["GUILLERMO MAS", "JERONI MARQUES"], "sets": "6-3 / 6-1", "ganador": "local"},
+            {"orden": "Pareja 2", "local_jugadores": ["DAMIA SEGUI", "IGNASI MERCADAL"], "visitante_jugadores": ["GABRIEL LLABRES", "CARLOS BORRAS"], "sets": "3-6 / 6-1 / 6-2", "ganador": "local"},
+            {"orden": "Pareja 3", "local_jugadores": ["NARCIS MARQUES", "ANTONIO TORRES"], "visitante_jugadores": ["FRANCESC GONZALEZ", "OSVALDO VIDAL"], "sets": "7-5 / 6-3", "ganador": "local"}
+          ]
         },
         {
-          "orden": "Pareja 2",
-          "pareja_local": ["Jugador B1 (SIX SEVEN)", "Jugador B2 (SIX SEVEN)"],
-          "pareja_visitante": ["Rival 3", "Rival 4"],
-          "resultado_sets": "4-6 / 3-6",
-          "ganador": "Rival"
-        },
-        {
-          "orden": "Pareja 3",
-          "pareja_local": ["Jugador C1 (SIX SEVEN)", "Jugador C2 (SIX SEVEN)"],
-          "pareja_visitante": ["Rival 5", "Rival 6"],
-          "resultado_sets": "7-5 / 6-4",
-          "ganador": "SIX SEVEN"
+          "local": "SIX SEVEN",
+          "visitante": "C.E. GIMNÀS CA NOSTRA \"B\"",
+          "resultado_global": "1 - 2",
+          "fecha": "27/09/2026 - 11:30",
+          "lugar": "ALAIOR",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador SIX 1", "Jugador SIX 2"], "visitante_jugadores": ["Rival B1", "Rival B2"], "sets": "Pendiente", "ganador": "visitante"},
+            {"orden": "Pareja 2", "local_jugadores": ["Jugador SIX 3", "Jugador SIX 4"], "visitante_jugadores": ["Rival B3", "Rival B4"], "sets": "Pendiente", "ganador": "local"},
+            {"orden": "Pareja 3", "local_jugadores": ["Jugador SIX 5", "Jugador SIX 6"], "visitante_jugadores": ["Rival B5", "Rival B6"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
         }
       ]
-    }
-  ],
-  "clasificacion": [
-    {
-      "pos": 1,
-      "equipo": "SIX SEVEN",
-      "puntos": 3,
-      "partidos_ganados": 2,
-      "partidos_perdidos": 1,
-      "sets_favor": 4,
-      "sets_contra": 3,
-      "efectividad": "66.7%"
     }
   ]
 }
