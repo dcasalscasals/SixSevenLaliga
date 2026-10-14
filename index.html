@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIX SEVEN - Analytics & Scouting</title>
+    <title>SIX SEVEN - División Azul Masculina</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>body { font-family: 'Inter', sans-serif; }</style>
@@ -11,37 +11,33 @@
 <body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-6 pb-20">
     <div class="max-w-2xl mx-auto space-y-6">
         
-        <!-- Header SIX SEVEN -->
+        <!-- Header -->
         <header class="text-center space-y-1 bg-slate-800 p-4 rounded-2xl border border-slate-700 shadow-xl">
-            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">División Masculina Azul</span>
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">División Azul Masculina (Menorca)</span>
             <h1 class="text-3xl font-extrabold text-white">SIX SEVEN 🎾</h1>
-            <p class="text-xs text-slate-400">Actualizado: <span id="fecha-act">-</span></p>
+            <p class="text-xs text-slate-400" id="titulo-torneo">Cargando datos...</p>
         </header>
 
-        <!-- Navegación por Pestañas -->
+        <!-- Pestañas de Navegación -->
         <div class="flex bg-slate-800 p-1 rounded-2xl border border-slate-700 text-xs sm:text-sm font-semibold">
-            <button onclick="cambiarTab('jornadas')" id="btn-jornadas" class="flex-1 py-2.5 rounded-xl text-center transition bg-emerald-500 text-slate-950 font-bold shadow">📅 Calendario</button>
-            <button onclick="cambiarTab('clasificacion')" id="btn-clasificacion" class="flex-1 py-2.5 rounded-xl text-center transition text-slate-400 hover:text-white">🏆 Clasificación</button>
-            <button onclick="cambiarTab('stats')" id="btn-stats" class="flex-1 py-2.5 rounded-xl text-center transition text-slate-400 hover:text-white">📊 Analytics / Rival</button>
+            <button onclick="cambiarTab('clasificacion')" id="btn-clasificacion" class="flex-1 py-2.5 rounded-xl text-center transition bg-emerald-500 text-slate-950 font-bold shadow">🏆 Clasificación</button>
+            <button onclick="cambiarTab('jornadas')" id="btn-jornadas" class="flex-1 py-2.5 rounded-xl text-center transition text-slate-400 hover:text-white">📅 Enfrentamientos y Partidos</button>
         </div>
 
         <main>
-            <!-- PESTAÑA 1: CALENDARIO (Pasado y Futuro) -->
-            <div id="tab-jornadas" class="space-y-4">
-                <div id="lista-jornadas" class="space-y-4"></div>
-            </div>
-
-            <!-- PESTAÑA 2: CLASIFICACIÓN DETALLADA -->
-            <div id="tab-clasificacion" class="space-y-3 hidden">
-                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-lg overflow-x-auto">
-                    <table class="w-full text-left text-xs sm:text-sm">
+            <!-- PESTAÑA 1: CLASIFICACIÓN GENERAL (Los 15 equipos) -->
+            <div id="tab-clasificacion" class="space-y-3">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Tabla General - Todos los Equipos</h2>
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-3 shadow-lg overflow-x-auto">
+                    <table class="w-full text-left text-xs">
                         <thead class="text-slate-400 uppercase border-b border-slate-700 text-3xs">
                             <tr>
-                                <th class="pb-2">#</th>
+                                <th class="pb-2 pl-1">#</th>
                                 <th class="pb-2">Equipo</th>
-                                <th class="pb-2 text-center">Partidos (G/P)</th>
-                                <th class="pb-2 text-center">Sets (F/C)</th>
-                                <th class="pb-2 text-right">Pts</th>
+                                <th class="pb-2 text-center">JJ</th>
+                                <th class="pb-2 text-center">Pt</th>
+                                <th class="pb-2 text-center">JG/JP</th>
+                                <th class="pb-2 text-center">SG/SP</th>
                             </tr>
                         </thead>
                         <tbody id="tabla-clasificacion" class="divide-y divide-slate-700/50"></tbody>
@@ -49,29 +45,10 @@
                 </div>
             </div>
 
-            <!-- PESTAÑA 3: ESTADÍSTICAS Y SCOUTING RIVAL -->
-            <div id="tab-stats" class="space-y-4 hidden">
-                <!-- Tarjetas de métricas rápidas SIX SEVEN -->
-                <div class="grid grid-cols-3 gap-3">
-                    <div class="bg-slate-800 border border-slate-700 p-3 rounded-xl text-center">
-                        <span class="text-3xs text-slate-400 uppercase font-semibold block">Efectividad</span>
-                        <span id="stat-efectividad" class="text-lg font-bold text-emerald-400">-</span>
-                    </div>
-                    <div class="bg-slate-800 border border-slate-700 p-3 rounded-xl text-center">
-                        <span class="text-3xs text-slate-400 uppercase font-semibold block">Partidos G/P</span>
-                        <span id="stat-partidos" class="text-lg font-bold text-white">-</span>
-                    </div>
-                    <div class="bg-slate-800 border border-slate-700 p-3 rounded-xl text-center">
-                        <span class="text-3xs text-slate-400 uppercase font-semibold block">Balance Sets</span>
-                        <span id="stat-sets" class="text-lg font-bold text-emerald-400">-</span>
-                    </div>
-                </div>
-
-                <!-- Scouting de Parejas / Jugadores -->
-                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 space-y-3">
-                    <h3 class="text-xs font-bold uppercase text-emerald-400 tracking-wider">👥 Análisis de Parejas y Posiciones (1, 2, 3)</h3>
-                    <div id="parejas-analisis" class="space-y-2 text-xs"></div>
-                </div>
+            <!-- PESTAÑA 2: CALENDARIO Y DETALLE DE PAREJAS (1, 2 y 3) -->
+            <div id="tab-jornadas" class="space-y-4 hidden">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Resultados por Jornada y Parejas</h2>
+                <div id="lista-jornadas" class="space-y-4"></div>
             </div>
         </main>
 
@@ -79,7 +56,7 @@
 
     <script>
         function cambiarTab(tab) {
-            ['jornadas', 'clasificacion', 'stats'].forEach(t => {
+            ['clasificacion', 'jornadas'].forEach(t => {
                 document.getElementById(`tab-${t}`).classList.add('hidden');
                 document.getElementById(`btn-${t}`).className = "flex-1 py-2.5 rounded-xl text-center transition text-slate-400 hover:text-white";
             });
@@ -90,67 +67,72 @@
         fetch('data.json')
             .then(res => res.json())
             .then(data => {
-                document.getElementById('fecha-act').innerText = data.actualizado;
+                document.getElementById('titulo-torneo').innerText = `${data.torneo} | Actualizado: ${data.actualizado}`;
 
-                // Render Calendario (Pasado + Futuro)
+                // Render Clasificación Completa (15 equipos)
+                const tabla = document.getElementById('tabla-clasificacion');
+                tabla.innerHTML = '';
+                data.clasificacion.forEach(c => {
+                    const esMiEquipo = c.equipo === "SIX SEVEN";
+                    tabla.innerHTML += `
+                        <tr class="${esMiEquipo ? 'bg-emerald-950/60 font-bold border-l-4 border-emerald-400 text-white' : 'hover:bg-slate-700/30 text-slate-200'}">
+                            <td class="py-2.5 pl-1 font-bold text-slate-400">${c.pos}</td>
+                            <td class="py-2.5">${c.equipo} ${esMiEquipo ? '⭐' : ''}</td>
+                            <td class="py-2.5 text-center">${c.jj}</td>
+                            <td class="py-2.5 text-center font-bold text-emerald-400">${c.pt}</td>
+                            <td class="py-2.5 text-center text-slate-300">${c.jg}/${c.jp}</td>
+                            <td class="py-2.5 text-center text-slate-300">${c.sg}/${c.sp}</td>
+                        </tr>
+                    `;
+                });
+
+                // Render Jornadas, Enfrentamientos y Parejas 1, 2, 3
                 const jornadasDiv = document.getElementById('lista-jornadas');
                 jornadasDiv.innerHTML = '';
                 data.jornadas.forEach(j => {
-                    let partidosHtml = '';
-                    j.partidos.forEach(p => {
-                        const esGanadorSixSeven = p.ganador === 'SIX SEVEN';
-                        const badgeColor = esGanadorSixSeven ? 'bg-emerald-950 text-emerald-300 border-emerald-800' : 'bg-rose-950 text-rose-300 border-rose-800';
-                        
-                        partidosHtml += `
-                            <div class="bg-slate-900/70 p-3 rounded-xl border border-slate-700/60 space-y-1 text-xs">
-                                <div class="flex justify-between items-center font-bold">
-                                    <span class="text-slate-400">Punt ${p.orden}</span>
-                                    <span class="px-2 py-0.5 rounded border text-3xs ${badgeColor}">${p.resultado_sets}</span>
+                    let enfrentamientosHtml = '';
+                    j.enfrentamientos.forEach(enf => {
+                        let partidosHtml = '';
+                        enf.partidos.forEach(p => {
+                            const esLocalGanador = p.ganador === 'local';
+                            partidosHtml += `
+                                <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-700/50 space-y-1 text-xs">
+                                    <div class="flex justify-between font-semibold text-3xs text-emerald-400">
+                                        <span>${p.orden}</span>
+                                        <span class="bg-slate-800 px-2 py-0.5 rounded text-white">${p.sets}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-3xs pt-1 text-slate-300">
+                                        <div class="${esLocalGanador ? 'font-bold text-white' : 'text-slate-400'}">Local: ${p.local_jugadores.join(' & ')}</div>
+                                        <div class="${!esLocalGanador ? 'font-bold text-white' : 'text-slate-400'} text-right">Visita: ${p.visitante_jugadores.join(' & ')}</div>
+                                    </div>
                                 </div>
-                                <div class="flex justify-between items-center pt-1 text-slate-200">
-                                    <span class="${p.ganador === j.equipo_local ? 'font-bold text-emerald-400' : ''}">${p.pareja_local.join(' / ')}</span>
-                                    <span class="text-slate-500 text-3xs px-1">VS</span>
-                                    <span class="${p.ganador === j.equipo_visitante ? 'font-bold text-emerald-400' : ''}">${p.pareja_visitante.join(' / ')}</span>
+                            `;
+                        });
+
+                        const esMiPartido = enf.local === "SIX SEVEN" || enf.visitante === "SIX SEVEN";
+
+                        enfrentamientosHtml += `
+                            <div class="bg-slate-800 border ${esMiPartido ? 'border-emerald-500 shadow-emerald-950/50 shadow-lg' : 'border-slate-700'} rounded-2xl p-4 space-y-3">
+                                <div class="flex justify-between items-center text-3xs text-slate-400 border-b border-slate-700 pb-1.5">
+                                    <span>📅 ${enf.fecha} (${enf.lugar})</span>
+                                    ${esMiPartido ? '<span class="bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded font-bold">¡TU EQUIPO!</span>' : ''}
                                 </div>
+                                <div class="flex justify-between items-center font-bold text-sm text-white">
+                                    <span class="${enf.local === 'SIX SEVEN' ? 'text-emerald-400' : ''}">${enf.local}</span>
+                                    <span class="bg-slate-900 px-3 py-1 rounded-xl text-emerald-400 border border-slate-700">${enf.resultado_global}</span>
+                                    <span class="${enf.visitante === 'SIX SEVEN' ? 'text-emerald-400' : ''}">${enf.visitante}</span>
+                                </div>
+                                <div class="space-y-2 pt-1">${partidosHtml}</div>
                             </div>
                         `;
                     });
 
                     jornadasDiv.innerHTML += `
-                        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-lg space-y-3">
-                            <div class="flex justify-between items-center border-b border-slate-700/80 pb-2">
-                                <span class="text-xs bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-lg font-bold">${j.jornada}</span>
-                                <span class="text-xs text-slate-400">📅 ${j.fecha}</span>
-                            </div>
-                            <div class="flex justify-between items-center font-extrabold text-sm text-white">
-                                <span>${j.equipo_local}</span>
-                                <span class="text-base text-emerald-400 bg-slate-900 px-3 py-1 rounded-xl border border-slate-700">${j.resultado_global}</span>
-                                <span>${j.equipo_visitante}</span>
-                            </div>
-                            <div class="space-y-2 pt-1">${partidosHtml}</div>
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-bold text-white bg-slate-800/80 px-3 py-2 rounded-xl border border-slate-700">${j.jornada}</h3>
+                            ${enfrentamientosHtml}
                         </div>
                     `;
-                });
-
-                // Clasificación Detallada
-                const tabla = document.getElementById('tabla-clasificacion');
-                data.clasificacion.forEach(c => {
-                    const esMiEquipo = c.equipo === "SIX SEVEN";
-                    tabla.innerHTML += `
-                        <tr class="${esMiEquipo ? 'bg-emerald-950/40 font-bold border-l-2 border-emerald-400' : 'hover:bg-slate-700/30'}">
-                            <td class="py-3 font-bold text-slate-400 pl-2">${c.pos}</td>
-                            <td class="py-3 text-white">${c.equipo} ${esMiEquipo ? '⭐' : ''}</td>
-                            <td class="py-3 text-center text-slate-300">${c.partidos_ganados}/${c.partidos_perdidos}</td>
-                            <td class="py-3 text-center text-slate-300">${c.sets_favor}/${c.sets_contra}</td>
-                            <td class="py-3 text-right font-bold text-emerald-400 pr-2">${c.puntos}</td>
-                        </tr>
-                    `;
-
-                    if(esMiEquipo) {
-                        document.getElementById('stat-efectividad').innerText = c.efectividad || '-';
-                        document.getElementById('stat-partidos').innerText = `${c.partidos_ganados}G - ${c.partidos_perdidos}P`;
-                        document.getElementById('stat-sets').innerText = `${c.sets_favor}F / ${c.sets_contra}C`;
-                    }
                 });
             });
     </script>
