@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario y Estadísticas - Pádel</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-6">
+    <div class="max-w-xl mx-auto space-y-6">
+        
+        <!-- Header -->
+        <header class="text-center space-y-1">
+            <h1 id="titulo-torneo" class="text-2xl font-bold text-emerald-400">Cargando Torneo...</h1>
+            <p class="text-xs text-slate-400">Última actualización: <span id="fecha-act">-</span></p>
+        </header>
+
+        <!-- Próximo Partido -->
+        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-3">⚡ Próximo Partido</h2>
+            <div id="proximo-partido" class="space-y-2 text-sm">
+                <p class="text-slate-300">Cargando próximo encuentro...</p>
+            </div>
+        </section>
+
+        <!-- Clasificación -->
+        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-3">🏆 Clasificación</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="text-xs text-slate-400 uppercase border-b border-slate-700">
+                        <tr>
+                            <th class="pb-2">#</th>
+                            <th class="pb-2">Equipo</th>
+                            <th class="pb-2 text-center">J</th>
+                            <th class="pb-2 text-right">Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-clasificacion" class="divide-y divide-slate-700/50">
+                        <!-- Se llena con JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Resultados Recientes -->
+        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-3">📋 Últimos Resultados</h2>
+            <div id="resultados-lista" class="space-y-2 text-sm text-slate-300">
+                <!-- Se llena con JS -->
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('titulo-torneo').innerText = data.torneo;
+                document.getElementById('fecha-act').innerText = data.actualizado;
+
+                // Próximo partido
+                const proxDiv = document.getElementById('proximo-partido');
+                proxDiv.innerHTML = '';
+                data.proxima_jornada.forEach(p => {
+                    proxDiv.innerHTML += `
+                        <div class="flex justify-between font-semibold text-base text-white">
+                            <span>${p.pareja1}</span>
+                            <span class="text-emerald-400 font-bold">VS</span>
+                            <span>${p.pareja2}</span>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-1 flex justify-between">
+                            <span>📅 ${p.fecha}</span>
+                            <span>📍 ${p.pista}</span>
+                        </div>
+                    `;
+                });
+
+                // Clasificación
+                const tabla = document.getElementById('tabla-clasificacion');
+                tabla.innerHTML = '';
+                data.clasificacion.forEach(c => {
+                    tabla.innerHTML += `
+                        <tr class="hover:bg-slate-700/30">
+                            <td class="py-2.5 font-bold text-slate-400">${c.pos}</td>
+                            <td class="py-2.5 font-medium text-white">${c.equipo}</td>
+                            <td class="py-2.5 text-center text-slate-300">${c.jugados}</td>
+                            <td class="py-2.5 text-right font-bold text-emerald-400">${c.puntos}</td>
+                        </tr>
+                    `;
+                });
+
+                // Resultados
+                const resDiv = document.getElementById('resultados-lista');
+                resDiv.innerHTML = '';
+                data.resultados_recientes.forEach(r => {
+                    resDiv.innerHTML += `
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700/50 flex justify-between items-center">
+                            <div>
+                                <span class="text-xs text-emerald-400 font-semibold block">${r.jornada}</span>
+                                <span class="font-medium text-white">${r.pareja1} vs ${r.pareja2}</span>
+                            </div>
+                            <span class="text-xs bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-lg font-semibold">${r.resultado}</span>
+                        </div>
+                    `;
+                });
+            });
+    </script>
+</body>
+</html>
