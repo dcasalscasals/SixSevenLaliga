@@ -1,15 +1,16 @@
 {
   "torneo": "La Liga Padel 2026/27 - ID 28876",
-  "actualizado": "2026-10-14",
+  "actualizado": "14/10/2026",
+  "calendario": [
+    {"jornada": "Jornada 8", "fecha": "18/10/2026 - 18:00", "pareja1": "Pareja A - Ferreries", "pareja2": "Smash Brothers", "pista": "Pista 1"},
+    {"jornada": "Jornada 9", "fecha": "25/10/2026 - 20:00", "pareja1": "Pareja A - Ferreries", "pareja2": "Los Jefes de Pista", "pista": "Pista 2"}
+  ],
   "clasificacion": [
-    {"pos": 1, "equipo": "Pareja A - Ferreries", "puntos": 18, "jugados": 7, "ganados": 6, "perdidos": 1, "sets": "+8"},
-    {"pos": 2, "equipo": "Los Jefes de Pista", "puntos": 15, "jugados": 7, "ganados": 5, "perdidos": 2, "sets": "+5"},
-    {"pos": 3, "equipo": "Smash Brothers", "puntos": 12, "jugados": 7, "ganados": 4, "perdidos": 3, "sets": "+2"}
+    {"pos": 1, "equipo": "Pareja A - Ferreries", "puntos": 18, "jugados": 7, "ganados": 6, "perdidos": 1},
+    {"pos": 2, "equipo": "Los Jefes de Pista", "puntos": 15, "jugados": 7, "ganados": 5, "perdidos": 2},
+    {"pos": 3, "equipo": "Smash Brothers", "puntos": 12, "jugados": 7, "ganados": 4, "perdidos": 3}
   ],
-  "proxima_jornada": [
-    {"jornada": "Jornada 8", "fecha": "18/10/2026 - 18:00", "pareja1": "Pareja A - Ferreries", "pareja2": "Smash Brothers", "pista": "Pista 1 - Club Pádel"}
-  ],
-  "resultados_recientes": [
+  "resultados": [
     {"jornada": "Jornada 7", "pareja1": "Pareja A - Ferreries", "pareja2": "Los Jefes de Pista", "resultado": "6-4 / 3-6 / 7-6 (Ganado)"}
   ]
 }
