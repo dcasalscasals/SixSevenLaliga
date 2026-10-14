@@ -1,16 +1,53 @@
 {
-  "torneo": "La Liga Padel 2026/27 - ID 28876",
+  "torneo": "Liga Pádel - División Masculina Azul",
+  "mi_equipo": "SIX SEVEN",
   "actualizado": "14/10/2026",
-  "calendario": [
-    {"jornada": "Jornada 8", "fecha": "18/10/2026 - 18:00", "pareja1": "Pareja A - Ferreries", "pareja2": "Smash Brothers", "pista": "Pista 1"},
-    {"jornada": "Jornada 9", "fecha": "25/10/2026 - 20:00", "pareja1": "Pareja A - Ferreries", "pareja2": "Los Jefes de Pista", "pista": "Pista 2"}
+  "jornadas": [
+    {
+      "jornada": "Jornada 1",
+      "fecha": "11/10/2026",
+      "equipo_local": "SIX SEVEN",
+      "equipo_visitante": "Club Pádel Rival",
+      "resultado_global": "2 - 1",
+      "partidos": [
+        {
+          "orden": 1,
+          "pareja_local": ["Jugador 1 (SIX SEVEN)", "Jugador 2 (SIX SEVEN)"],
+          "pareja_visitante": ["Rival A", "Rival B"],
+          "resultado_sets": "6-3, 4-6, 6-2",
+          "ganador": "SIX SEVEN"
+        },
+        {
+          "orden": 2,
+          "pareja_local": ["Jugador 3 (SIX SEVEN)", "Jugador 4 (SIX SEVEN)"],
+          "pareja_visitante": ["Rival C", "Rival D"],
+          "resultado_sets": "2-6, 3-6",
+          "ganador": "Club Pádel Rival"
+        },
+        {
+          "orden": 3,
+          "pareja_local": ["Jugador 5 (SIX SEVEN)", "Jugador 6 (SIX SEVEN)"],
+          "pareja_visitante": ["Rival E", "Rival F"],
+          "resultado_sets": "7-5, 6-4",
+          "ganador": "SIX SEVEN"
+        }
+      ]
+    }
   ],
   "clasificacion": [
-    {"pos": 1, "equipo": "Pareja A - Ferreries", "puntos": 18, "jugados": 7, "ganados": 6, "perdidos": 1},
-    {"pos": 2, "equipo": "Los Jefes de Pista", "puntos": 15, "jugados": 7, "ganados": 5, "perdidos": 2},
-    {"pos": 3, "equipo": "Smash Brothers", "puntos": 12, "jugados": 7, "ganados": 4, "perdidos": 3}
-  ],
-  "resultados": [
-    {"jornada": "Jornada 7", "pareja1": "Pareja A - Ferreries", "pareja2": "Los Jefes de Pista", "resultado": "6-4 / 3-6 / 7-6 (Ganado)"}
+    {
+      "pos": 1,
+      "equipo": "SIX SEVEN",
+      "puntos": 3,
+      "enfrentamientos_jugados": 1,
+      "enfrentamientos_ganados": 1,
+      "partidos_ganados": 2,
+      "partidos_perdidos": 1,
+      "sets_favor": 4,
+      "sets_contra": 3,
+      "juegos_favor": 34,
+      "juegos_contra": 32,
+      "efectividad": "66.7%"
+    }
   ]
 }
