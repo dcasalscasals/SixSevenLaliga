@@ -1,34 +1,34 @@
 {
-  "torneo": "Liga Pádel - División Masculina Azul",
+  "torneo": "Liga de Pádel - División Masculina Azul",
   "mi_equipo": "SIX SEVEN",
   "actualizado": "14/10/2026",
   "jornadas": [
     {
       "jornada": "Jornada 1",
-      "fecha": "11/10/2026",
+      "fecha": "Fase de Grupos",
       "equipo_local": "SIX SEVEN",
-      "equipo_visitante": "Club Pádel Rival",
+      "equipo_visitante": "Rival de Grupo",
       "resultado_global": "2 - 1",
       "partidos": [
         {
-          "orden": 1,
-          "pareja_local": ["Jugador 1 (SIX SEVEN)", "Jugador 2 (SIX SEVEN)"],
-          "pareja_visitante": ["Rival A", "Rival B"],
-          "resultado_sets": "6-3, 4-6, 6-2",
+          "orden": "Pareja 1",
+          "pareja_local": ["Jugador A1 (SIX SEVEN)", "Jugador A2 (SIX SEVEN)"],
+          "pareja_visitante": ["Rival 1", "Rival 2"],
+          "resultado_sets": "6-3 / 6-2",
           "ganador": "SIX SEVEN"
         },
         {
-          "orden": 2,
-          "pareja_local": ["Jugador 3 (SIX SEVEN)", "Jugador 4 (SIX SEVEN)"],
-          "pareja_visitante": ["Rival C", "Rival D"],
-          "resultado_sets": "2-6, 3-6",
-          "ganador": "Club Pádel Rival"
+          "orden": "Pareja 2",
+          "pareja_local": ["Jugador B1 (SIX SEVEN)", "Jugador B2 (SIX SEVEN)"],
+          "pareja_visitante": ["Rival 3", "Rival 4"],
+          "resultado_sets": "4-6 / 3-6",
+          "ganador": "Rival"
         },
         {
-          "orden": 3,
-          "pareja_local": ["Jugador 5 (SIX SEVEN)", "Jugador 6 (SIX SEVEN)"],
-          "pareja_visitante": ["Rival E", "Rival F"],
-          "resultado_sets": "7-5, 6-4",
+          "orden": "Pareja 3",
+          "pareja_local": ["Jugador C1 (SIX SEVEN)", "Jugador C2 (SIX SEVEN)"],
+          "pareja_visitante": ["Rival 5", "Rival 6"],
+          "resultado_sets": "7-5 / 6-4",
           "ganador": "SIX SEVEN"
         }
       ]
@@ -39,14 +39,10 @@
       "pos": 1,
       "equipo": "SIX SEVEN",
       "puntos": 3,
-      "enfrentamientos_jugados": 1,
-      "enfrentamientos_ganados": 1,
       "partidos_ganados": 2,
       "partidos_perdidos": 1,
       "sets_favor": 4,
       "sets_contra": 3,
-      "juegos_favor": 34,
-      "juegos_contra": 32,
       "efectividad": "66.7%"
     }
   ]
