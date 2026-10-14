@@ -3,107 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario y Estadísticas - Pádel</title>
+    <title>Pádel Ferreries</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-6">
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-6 pb-20">
     <div class="max-w-xl mx-auto space-y-6">
         
         <!-- Header -->
         <header class="text-center space-y-1">
-            <h1 id="titulo-torneo" class="text-2xl font-bold text-emerald-400">Cargando Torneo...</h1>
-            <p class="text-xs text-slate-400">Última actualización: <span id="fecha-act">-</span></p>
+            <h1 id="titulo-torneo" class="text-2xl font-bold text-emerald-400">Cargando...</h1>
+            <p class="text-xs text-slate-400">Actualizado: <span id="fecha-act">-</span></p>
         </header>
 
-        <!-- Próximo Partido -->
-        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-3">⚡ Próximo Partido</h2>
-            <div id="proximo-partido" class="space-y-2 text-sm">
-                <p class="text-slate-300">Cargando próximo encuentro...</p>
-            </div>
-        </section>
+        <!-- Pestañas de Navegación -->
+        <div class="flex bg-slate-800 p-1 rounded-2xl border border-slate-700 text-sm font-semibold">
+            <button onclick="cambiarTab('calendario')" id="btn-calendario" class="flex-1 py-2.5 rounded-xl text-center transition bg-emerald-500 text-slate-950 shadow">📅 Calendario</button>
+            <button onclick="cambiarTab('clasificacion')" id="btn-clasificacion" class="flex-1 py-2.5 rounded-xl text-center transition text-slate-400 hover:text-white">🏆 Clasificación</button>
+            <button onclick="cambiarTab('resultados')" id="btn-resultados" class="flex-1 py-2.5 rounded-xl text-center transition text-slate-400 hover:text-white">📋 Resultados</button>
+        </div>
 
-        <!-- Clasificación -->
-        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-3">🏆 Clasificación</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm">
-                    <thead class="text-xs text-slate-400 uppercase border-b border-slate-700">
-                        <tr>
-                            <th class="pb-2">#</th>
-                            <th class="pb-2">Equipo</th>
-                            <th class="pb-2 text-center">J</th>
-                            <th class="pb-2 text-right">Pts</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-clasificacion" class="divide-y divide-slate-700/50">
-                        <!-- Se llena con JS -->
-                    </tbody>
-                </table>
+        <!-- Contenido de las Pestañas -->
+        <main>
+            <!-- Sección Calendario -->
+            <div id="tab-calendario" class="space-y-3">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Próximos Partidos</h2>
+                <div id="lista-calendario" class="space-y-3"></div>
             </div>
-        </section>
 
-        <!-- Resultados Recientes -->
-        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-3">📋 Últimos Resultados</h2>
-            <div id="resultados-lista" class="space-y-2 text-sm text-slate-300">
-                <!-- Se llena con JS -->
+            <!-- Sección Clasificación -->
+            <div id="tab-clasificacion" class="space-y-3 hidden">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Tabla de Posiciones</h2>
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-lg overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="text-xs text-slate-400 uppercase border-b border-slate-700">
+                            <tr>
+                                <th class="pb-2">#</th>
+                                <th class="pb-2">Equipo</th>
+                                <th class="pb-2 text-center">J</th>
+                                <th class="pb-2 text-right">Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-clasificacion" class="divide-y divide-slate-700/50"></tbody>
+                    </table>
+                </div>
             </div>
-        </section>
+
+            <!-- Sección Resultados -->
+            <div id="tab-resultados" class="space-y-3 hidden">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Últimos Resultados</h2>
+                <div id="lista-resultados" class="space-y-3"></div>
+            </div>
+        </main>
 
     </div>
 
     <script>
+        let datosGlobales = {};
+
+        function cambiarTab(tab) {
+            // Ocultar todas las pestañas y resetear botones
+            ['calendario', 'clasificacion', 'resultados'].forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                const btn = document.getElementById(`btn-${t}`);
+                btn.className = "flex-1 py-2.5 rounded-xl text-center transition text-slate-400 hover:text-white";
+            });
+
+            // Mostrar la seleccionada y activar su botón
+            document.getElementById(`tab-${tab}`).classList.remove('hidden');
+            const btnActivo = document.getElementById(`btn-${tab}`);
+            btnActivo.className = "flex-1 py-2.5 rounded-xl text-center transition bg-emerald-500 text-slate-950 font-bold shadow";
+        }
+
         fetch('data.json')
-            .then(response => response.json())
+            .then(res => res.json())
             .then(data => {
+                datosGlobales = data;
                 document.getElementById('titulo-torneo').innerText = data.torneo;
                 document.getElementById('fecha-act').innerText = data.actualizado;
 
-                // Próximo partido
-                const proxDiv = document.getElementById('proximo-partido');
-                proxDiv.innerHTML = '';
-                data.proxima_jornada.forEach(p => {
-                    proxDiv.innerHTML += `
-                        <div class="flex justify-between font-semibold text-base text-white">
-                            <span>${p.pareja1}</span>
-                            <span class="text-emerald-400 font-bold">VS</span>
-                            <span>${p.pareja2}</span>
-                        </div>
-                        <div class="text-xs text-slate-400 mt-1 flex justify-between">
-                            <span>📅 ${p.fecha}</span>
-                            <span>📍 ${p.pista}</span>
+                // Rellenar Calendario
+                const calDiv = document.getElementById('lista-calendario');
+                data.calendario.forEach(c => {
+                    calDiv.innerHTML += `
+                        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-lg space-y-2">
+                            <span class="text-xs bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded-md font-semibold">${c.jornada}</span>
+                            <div class="flex justify-between font-bold text-base text-white">
+                                <span>${c.pareja1}</span>
+                                <span class="text-emerald-400">VS</span>
+                                <span>${c.pareja2}</span>
+                            </div>
+                            <div class="text-xs text-slate-400 flex justify-between pt-1 border-t border-slate-700/50">
+                                <span>📅 ${c.fecha}</span>
+                                <span>📍 ${c.pista}</span>
+                            </div>
                         </div>
                     `;
                 });
 
-                // Clasificación
+                // Rellenar Clasificación
                 const tabla = document.getElementById('tabla-clasificacion');
-                tabla.innerHTML = '';
-                data.clasificacion.forEach(c => {
+                data.clasificacion.forEach(cl => {
                     tabla.innerHTML += `
                         <tr class="hover:bg-slate-700/30">
-                            <td class="py-2.5 font-bold text-slate-400">${c.pos}</td>
-                            <td class="py-2.5 font-medium text-white">${c.equipo}</td>
-                            <td class="py-2.5 text-center text-slate-300">${c.jugados}</td>
-                            <td class="py-2.5 text-right font-bold text-emerald-400">${c.puntos}</td>
+                            <td class="py-3 font-bold text-slate-400">${cl.pos}</td>
+                            <td class="py-3 font-medium text-white">${cl.equipo}</td>
+                            <td class="py-3 text-center text-slate-300">${cl.jugados}</td>
+                            <td class="py-3 text-right font-bold text-emerald-400">${cl.puntos}</td>
                         </tr>
                     `;
                 });
 
-                // Resultados
-                const resDiv = document.getElementById('resultados-lista');
-                resDiv.innerHTML = '';
-                data.resultados_recientes.forEach(r => {
+                // Rellenar Resultados
+                const resDiv = document.getElementById('lista-resultados');
+                data.resultados.forEach(r => {
                     resDiv.innerHTML += `
-                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700/50 flex justify-between items-center">
+                        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-lg flex justify-between items-center">
                             <div>
-                                <span class="text-xs text-emerald-400 font-semibold block">${r.jornada}</span>
-                                <span class="font-medium text-white">${r.pareja1} vs ${r.pareja2}</span>
+                                <span class="text-xs text-emerald-400 font-semibold block mb-1">${r.jornada}</span>
+                                <span class="font-medium text-white text-sm">${r.pareja1} vs ${r.pareja2}</span>
                             </div>
-                            <span class="text-xs bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-lg font-semibold">${r.resultado}</span>
+                            <span class="text-xs bg-emerald-950 text-emerald-300 px-3 py-1.5 rounded-xl font-bold">${r.resultado}</span>
                         </div>
                     `;
                 });
