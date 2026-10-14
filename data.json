@@ -36,15 +36,145 @@
           ]
         },
         {
+          "local": "CAMPEONEX",
+          "visitante": "Recreativo de Juerga",
+          "resultado_global": "1 - 2",
+          "fecha": "27/09/2026 - 09:00",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador C1", "Jugador C2"], "visitante_jugadores": ["Jugador R1", "Jugador R2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "CAMPEONEX",
+          "visitante": "PADEL RANGERS LEGACY",
+          "resultado_global": "1 - 2",
+          "fecha": "27/09/2026 - 11:30",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador C1", "Jugador C2"], "visitante_jugadores": ["Jugador P1", "Jugador P2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "Barri Team",
+          "visitante": "Recreativo de Juerga",
+          "resultado_global": "1 - 2",
+          "fecha": "27/09/2026 - 12:45",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador B1", "Jugador B2"], "visitante_jugadores": ["Jugador R1", "Jugador R2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "Biosport",
+          "visitante": "BÁSICOs",
+          "resultado_global": "0 - 3",
+          "fecha": "27/09/2026 - 09:00",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador Bio1", "Jugador Bio2"], "visitante_jugadores": ["Jugador Bas1", "Jugador Bas2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "Constr. Torrus & pipastore Team",
+          "visitante": "GALP",
+          "resultado_global": "0 - 3",
+          "fecha": "27/09/2026 - 10:15",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador T1", "Jugador T2"], "visitante_jugadores": ["Jugador G1", "Jugador G2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "Constr. Torrus & pipastore Team",
+          "visitante": "BÁSICOs",
+          "resultado_global": "1 - 2",
+          "fecha": "27/09/2026 - 11:30",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador T1", "Jugador T2"], "visitante_jugadores": ["Jugador Bas1", "Jugador Bas2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "Biosport",
+          "visitante": "GALP",
+          "resultado_global": "2 - 1",
+          "fecha": "27/09/2026 - 12:45",
+          "lugar": "PADELIN",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador Bio1", "Jugador Bio2"], "visitante_jugadores": ["Jugador G1", "Jugador G2"], "sets": "Pendiente", "ganador": "local"}
+          ]
+        },
+        {
+          "local": "Sa Nitja Padel",
+          "visitante": "SIX SEVEN",
+          "resultado_global": "1 - 2",
+          "fecha": "27/09/2026 - 09:00",
+          "lugar": "ALAIOR",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador SN1", "Jugador SN2"], "visitante_jugadores": ["Jugador SIX 1", "Jugador SIX 2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "Taxi driver & cia",
+          "visitante": "C.E. GIMNÀS CA NOSTRA \"B\"",
+          "resultado_global": "2 - 1",
+          "fecha": "27/09/2026 - 10:15",
+          "lugar": "ALAIOR",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador Tax1", "Jugador Tax2"], "visitante_jugadores": ["Jugador Gim1", "Jugador Gim2"], "sets": "Pendiente", "ganador": "local"}
+          ]
+        },
+        {
           "local": "SIX SEVEN",
           "visitante": "C.E. GIMNÀS CA NOSTRA \"B\"",
           "resultado_global": "1 - 2",
           "fecha": "27/09/2026 - 11:30",
           "lugar": "ALAIOR",
           "partidos": [
-            {"orden": "Pareja 1", "local_jugadores": ["Jugador SIX 1", "Jugador SIX 2"], "visitante_jugadores": ["Rival B1", "Rival B2"], "sets": "Pendiente", "ganador": "visitante"},
-            {"orden": "Pareja 2", "local_jugadores": ["Jugador SIX 3", "Jugador SIX 4"], "visitante_jugadores": ["Rival B3", "Rival B4"], "sets": "Pendiente", "ganador": "local"},
-            {"orden": "Pareja 3", "local_jugadores": ["Jugador SIX 5", "Jugador SIX 6"], "visitante_jugadores": ["Rival B5", "Rival B6"], "sets": "Pendiente", "ganador": "visitante"}
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador SIX 1", "Jugador SIX 2"], "visitante_jugadores": ["Jugador Gim1", "Jugador Gim2"], "sets": "Pendiente", "ganador": "visitante"},
+            {"orden": "Pareja 2", "local_jugadores": ["Jugador SIX 3", "Jugador SIX 4"], "visitante_jugadores": ["Jugador Gim3", "Jugador Gim4"], "sets": "Pendiente", "ganador": "local"},
+            {"orden": "Pareja 3", "local_jugadores": ["Jugador SIX 5", "Jugador SIX 6"], "visitante_jugadores": ["Jugador Gim5", "Jugador Gim6"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "Sa Nitja Padel",
+          "visitante": "Taxi driver & cia",
+          "resultado_global": "2 - 1",
+          "fecha": "27/09/2026 - 12:45",
+          "lugar": "ALAIOR",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador SN1", "Jugador SN2"], "visitante_jugadores": ["Jugador Tax1", "Jugador Tax2"], "sets": "Pendiente", "ganador": "local"}
+          ]
+        },
+        {
+          "local": "MARIANOS",
+          "visitante": "PADEL RANGERS",
+          "resultado_global": "0 - 3",
+          "fecha": "27/09/2026 - 09:00",
+          "lugar": "MALBUGER",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador M1", "Jugador M2"], "visitante_jugadores": ["Jugador PR1", "Jugador PR2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "MARIANOS",
+          "visitante": "PREGONDA A",
+          "resultado_global": "1 - 2",
+          "fecha": "27/09/2026 - 10:15",
+          "lugar": "MALBUGER",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador M1", "Jugador M2"], "visitante_jugadores": ["Jugador Preg1", "Jugador Preg2"], "sets": "Pendiente", "ganador": "visitante"}
+          ]
+        },
+        {
+          "local": "PADEL RANGERS",
+          "visitante": "PREGONDA A",
+          "resultado_global": "3 - 0",
+          "fecha": "27/09/2026 - 11:30",
+          "lugar": "MALBUGER",
+          "partidos": [
+            {"orden": "Pareja 1", "local_jugadores": ["Jugador PR1", "Jugador PR2"], "visitante_jugadores": ["Jugador Preg1", "Jugador Preg2"], "sets": "Pendiente", "ganador": "local"}
           ]
         }
       ]
